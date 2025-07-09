@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- METADATOS Y ENLACES -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maki Huánuco</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./CSS/main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- ===========================================
+             1. HEADER MÓVIL
+        =========================================== -->
+        <header class="header-mobile">
+            <h1 class="logo">Maki Huánuco</h1>
+            <button class="open-menu" id="open-menu">
+                <i class="bi bi-list"></i>
+            </button>
+        </header>
+
+        <!-- ===========================================
+             2. BARRA DE NAVEGACION 
+        =========================================== -->
+        <nav class="nav-principal">
+            <button class="close-menu" id="close-menu">
+                <i class="bi bi-x"></i>
+            </button>
+            <div class="navbar-content">
+                <header>
+                    <a class="logo">Maki Huánuco</a>
+                </header>
+                
+                <!-- Barra de búsqueda -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="bi bi-search search-icon"></i>
+                        <input type="text" id="buscador" class="search-input" placeholder="Buscar productos...">
+                        <button id="limpiar-busqueda" class="clear-search" title="Limpiar búsqueda">
+                            <i class="bi bi-x-circle"></i>
+                        </button>
+                    </div>
+                </div>
+
+                
+                
+                <!-- Navegación por categorías -->
+                <nav>
+                    <ul class="menu">
+                        <li><button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Todos los productos</button></li>
+                        <li><button id="ropa" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Ropa</button></li>
+                        <li><button id="accesorios" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Accesorios</button></li>
+                        <li><button id="alimentos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Alimentos</button></li>
+                        <li><button id="decoracion" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Decoración</button></li>
+                        <li><button id="nosotros" class="boton-menu boton-categoria"><i class="bi bi-people"></i> Nosotros</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+
+        <!-- ===========================================
+             3. BANNER PRINCIPAL
+        =========================================== -->
+        <div class="banner" id="banner">
+            <img src="./imagenes/banner/banner-1.jpeg" alt="Banner Maki Huánuco" class="imagen-banner">
+            <div class="banner-content">
+                <h1 class="banner-title">Bienvenido a Maki Huánuco</h1>
+                <p class="banner-subtitle">Artesanías auténticas del corazón del Perú</p>
+                <button class="scroll-down-btn" onclick="scrollToContent()"><i class="bi bi-chevron-down"></i></button>
+            </div>
+        </div>
+
+        <!-- ===========================================
+             4. CONTENIDO PRINCIPAL (MAIN)
+        =========================================== -->
+        <main id="main">
+            <!-- Sección de productos -->
+            <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
+            <div id="contenedor-productos" class="contenedor-productos">
+                <!-- Contenido dinámico desde JS -->
+            </div>
+            
+            <!-- Detalle de producto (oculto inicialmente) -->
+            <div id="detalle-producto" style="display: none;">
+                <!-- Contenido dinámico desde JS -->
+            </div>
+            
+            <!-- Sección Nosotros (oculta inicialmente) -->
+            <div id="seccion-nosotros" style="display: none;">
+                <p>Somos una plataforma que promueve y comercializa artesanías huanuqueñas, resaltando su historia, técnicas ancestrales y riqueza cultural. Conectamos a los compradores con la identidad viva de Huánuco, siendo un puente entre tradición, arte y desarrollo local.</p>
+                <strong>Desarrolladores:</strong>
+                <ul class="desarrolladores-lista">
+                    <li>
+                        <img src="imagenes/nosotros/nosotros1.jpeg" alt="">
+                        Diego Alessandro Mendoza Jump
+                        <div class="redes-desarrollador">
+                            <a href="https://instagram.com/dieg.8w" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://facebook.com/diego.mendoza.jump" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="mailto:diego210208@gmail.com" title="Gmail"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="imagenes/nosotros/nosotros3.jpeg" alt="">
+                        Arian Rodrigo Rojas Clemente
+                        <div class="redes-desarrollador">
+                            <a href="https://instagram.com/arian._24" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://facebook.com/arianrodrigo.rojasclemente" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="mailto:arianrojasclemente759@gmail.com" title="Gmail"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="imagenes/nosotros/nosotros4.jpeg" alt="">
+                        Jair Hansel Flores García
+                        <div class="redes-desarrollador">
+                            <a href="https://instagram.com/jairsito3" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://facebook.com/jairsito.flores.garcia" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="mailto:floresgarciajairhansel@gmail.com" title="Gmail"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="imagenes/nosotros/nosotros2.jpeg" alt="">
+                        Anthony Farith Espinoza Matos
+                        <div class="redes-desarrollador">
+                            <a href="https://instagram.com/anthonyfem270208" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://facebook.com/anthony.espinoza.matos.2025" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="mailto:anthonyfem270208@gmail.com" title="Gmail"><i class="bi bi-envelope-fill"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        
+
+
+        <!-- ===========================================
+             5. FOOTER
+        =========================================== -->
+        <footer id="footer" class="footer-contenedor">
+            <div class="footer-info">
+                <p>&copy; 2025 Maki Huánuco.</p>
+                <p>Diseñado con ❤️ en Perú</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ===========================================
+         6. SCRIPTS
+    =========================================== -->
+    <script src="./JS/main.js"></script>
+    <script src="./JS/menu-celular.js"></script>
+
+
+
+
+</body>
+</html>
